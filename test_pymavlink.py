@@ -3,6 +3,7 @@ from pymavlink import mavutil
 import math
 
 connection = mavutil.mavlink_connection('/dev/ttyAMA0', baud=115200)
+connection.reboot_autopilot()
 connection.wait_heartbeat()
 print("hb receive")
 print(connection.mav)
