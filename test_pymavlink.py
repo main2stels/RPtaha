@@ -1,6 +1,7 @@
 import time
 from pymavlink import mavutil
 import math
+import datetime
 
 print("start")
 connection = mavutil.mavlink_connection('/dev/serial0', baud=115200)
@@ -36,13 +37,16 @@ print("while")
 while True:
     msg = connection.recv_msg()
 
+
     if msg is None:
         continue
 
     if msg.get_type()=='ATTITUDE':
+        now = datetime.datetime.now()
         print(msg.roll)
+        print(now)
 
-    print(msg.get_type())
+    #print(msg.get_type())
 
 
     # msg_GPS = connection.recv_match(type = ['GLOBAL_POSITION_INT'], blocking=True)
