@@ -30,6 +30,8 @@ while True:
     if msg.get_type()=='ATTITUDE':
         print(msg.roll)
 
+    print(msg.get_type())
+
 
     # msg_GPS = connection.recv_match(type = ['GLOBAL_POSITION_INT'], blocking=True)
     
