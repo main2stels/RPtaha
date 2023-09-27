@@ -1,5 +1,8 @@
 import time
+
+import pymavlink.dialects.v20.all
 from pymavlink import mavutil
+from pymavlink import mavexpression
 import math
 import datetime
 
@@ -11,6 +14,8 @@ connection.wait_heartbeat()
 print("hb receive")
 print(connection.mav)
 
+connection.mav.
+
 connection.mav.request_data_stream_send(connection.target_system,
                                         connection.target_component,
                                         mavutil.mavlink.MAV_DATA_STREAM_POSITION,
@@ -19,7 +24,7 @@ connection.mav.request_data_stream_send(connection.target_system,
 
 connection.mav.request_data_stream_send(connection.target_system,
                                         connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
+                                        mavutil.mavlink.,
                                         30,
                                         1)
 
@@ -28,6 +33,20 @@ connection.mav.request_data_stream_send(connection.target_system,
                                         mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
                                         30,
                                         1)
+
+connection.mav.request_data_stream_send(connection.target_system,
+                                        connection.target_component,
+                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
+                                        30,
+                                        1)
+frequency_hz = 30
+connection.mav.command_long_send(connection.target_system,
+                                 connection.target_component,
+                                 mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL,
+                                 0,
+                                 pymavlink.dialects.v20.all.MAVLINK_MSG_ID_ATTITUDE,
+                                 1e6 / frequency_hz,
+                                 0, 0, 0, 0, 0)
 
 # perv_distance = 0.22
 # perv_time = 0
