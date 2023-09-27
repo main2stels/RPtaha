@@ -4,23 +4,23 @@ import math
 
 connection = mavutil.mavlink_connection('/dev/ttyAMA0', baud=115200)
 
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
-                                        10,
-                                        1)
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
-                                        30,
-                                        1)
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
-                                        30,
-                                        1)
+#connection.mav.request_data_stream_send(connection.target_system,
+#                                        connection.target_component,
+#                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
+#                                        10,
+#                                        1)
+#
+#connection.mav.request_data_stream_send(connection.target_system,
+#                                        connection.target_component,
+#                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
+#                                        30,
+#                                        1)
+#
+#connection.mav.request_data_stream_send(connection.target_system,
+#                                        connection.target_component,
+#                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
+#                                        30,
+#                                        1)
 
 # perv_distance = 0.22
 # perv_time = 0
