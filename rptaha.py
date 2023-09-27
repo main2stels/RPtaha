@@ -24,6 +24,9 @@ try:
         pitch = vehicle.attitude.pitch
         roll = vehicle.attitude.roll
         yaw = vehicle.attitude.yaw
+        velocity_x = vehicle.velocity[0]
+        velocity_y = vehicle.velocity[1]
+        velocity_z = vehicle.velocity[2]
         altitude = vehicle.location.global_relative_frame.alt
 
         cv2.drawMarker(image, 
