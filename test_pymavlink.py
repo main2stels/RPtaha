@@ -2,6 +2,7 @@ import time
 from pymavlink import mavutil
 import math
 
+print("start")
 connection = mavutil.mavlink_connection('/dev/ttyAMA0', baud=115200)
 connection.reboot_autopilot()
 connection.wait_heartbeat()
