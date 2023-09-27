@@ -4,38 +4,39 @@ import math
 
 print("start")
 connection = mavutil.mavlink_connection('/dev/serial0', baud=115200)
-connection.reboot_autopilot()
+
+
 connection.wait_heartbeat()
 print("hb receive")
 print(connection.mav)
 
-#connection.mav.request_data_stream_send(connection.target_system,
-#                                        connection.target_component,
-#                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
-#                                        10,
-#                                        1)
-#
-#connection.mav.request_data_stream_send(connection.target_system,
-#                                        connection.target_component,
-#                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
-#                                        30,
-#                                        1)
-#
-#connection.mav.request_data_stream_send(connection.target_system,
-#                                        connection.target_component,
-#                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
-#                                        30,
-#                                        1)
+connection.mav.request_data_stream_send(connection.target_system,
+                                        connection.target_component,
+                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
+                                        10,
+                                        1)
+
+connection.mav.request_data_stream_send(connection.target_system,
+                                        connection.target_component,
+                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
+                                        30,
+                                        1)
+
+connection.mav.request_data_stream_send(connection.target_system,
+                                        connection.target_component,
+                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
+                                        30,
+                                        1)
 
 # perv_distance = 0.22
 # perv_time = 0
-while True:
-    print("while")
 
+print("while")
+
+while True:
     msg = connection.recv_msg()
 
     if msg is None:
-        print("msg is none")
         continue
 
     if msg.get_type()=='ATTITUDE':
