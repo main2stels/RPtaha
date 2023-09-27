@@ -25,6 +25,8 @@ connection.mav.request_data_stream_send(connection.target_system,
 # perv_distance = 0.22
 # perv_time = 0
 while True:
+    print("while")
+
     msg = connection.recv_msg()
 
     if msg.get_type()=='ATTITUDE':
