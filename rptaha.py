@@ -26,8 +26,17 @@ try:
         yaw = vehicle.attitude.yaw
         altitude = vehicle.location.global_relative_frame.alt
 
-        cv2.drawMarker(image, (center_x, center_y), (0, 0, 255), cv2.MARKER_CROSS, marker_size)
+        cv2.drawMarker(image, 
+                       (center_x, center_y), 
+                       (0, 0, 255), 
+                       cv2.MARKER_CROSS, 
+                       marker_size)
+
+        cv2.imshow("Image_camera", image)
+        cv2.waitKey(1)
+        
 
 except KeyboardInterrupt:
     vehicle.close()
+    cv2.destroyAllWindows()
     print('Exit capture')
