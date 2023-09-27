@@ -14,31 +14,6 @@ connection.wait_heartbeat()
 print("hb receive")
 print(connection.mav)
 
-connection.mav.
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_POSITION,
-                                        10,
-                                        1)
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.,
-                                        30,
-                                        1)
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
-                                        30,
-                                        1)
-
-connection.mav.request_data_stream_send(connection.target_system,
-                                        connection.target_component,
-                                        mavutil.mavlink.MAV_DATA_STREAM_EXTENDED_STATUS,
-                                        30,
-                                        1)
 frequency_hz = 30
 connection.mav.command_long_send(connection.target_system,
                                  connection.target_component,
