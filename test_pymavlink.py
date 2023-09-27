@@ -29,6 +29,10 @@ while True:
 
     msg = connection.recv_msg()
 
+    if msg is None:
+        print("msg is none")
+        continue
+
     if msg.get_type()=='ATTITUDE':
         print(msg.roll)
 
