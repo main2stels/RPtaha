@@ -22,8 +22,9 @@
         
         ![Снимок экрана от 2023-09-02 21-36-55.png](Images/screenshot.png)
         
-    - Как добавить еще одну раскладку клавиатуры показано ниже
-        
-        ![https://i.stack.imgur.com/waDmw.gif](https://i.stack.imgur.com/waDmw.gif)
-        
+## Подключение Raspberry PI4 как компаньен компьютер
+Информация по подключению Raspberry PI к автопилоту   [здесь](https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html).
+
+
+
 
