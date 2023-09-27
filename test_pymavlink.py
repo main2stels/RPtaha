@@ -23,6 +23,14 @@ connection.mav.command_long_send(connection.target_system,
                                  1e6 / frequency_hz,
                                  0, 0, 0, 0, 0)
 
+connection.mav.command_long_send(connection.target_system,
+                                 connection.target_component,
+                                 mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL,
+                                 0,
+                                 pymavlink.dialects.v20.all.MAVLINK_MSG_ID_GLOBAL_POSITION_INT,
+                                 1e6 / frequency_hz,
+                                 0, 0, 0, 0, 0)
+
 # perv_distance = 0.22
 # perv_time = 0
 
