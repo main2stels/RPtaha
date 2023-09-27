@@ -3,6 +3,9 @@ from pymavlink import mavutil
 import math
 
 connection = mavutil.mavlink_connection('/dev/ttyAMA0', baud=115200)
+connection.wait_heartbeat()
+print("hb receive")
+print(connection.mav)
 
 #connection.mav.request_data_stream_send(connection.target_system,
 #                                        connection.target_component,
