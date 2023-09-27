@@ -35,9 +35,14 @@ while True:
     if msg is None:
         continue
 
-    if msg.get_type()=='ATTITUDE':
+    msg_type = msg.get_type()
+    if msg_type == 'ATTITUDE':
         now = datetime.datetime.now()
         print(msg.roll)
+        print(now)
+    elif msg_type == 'GLOBAL_POSITION_INT':
+        now = datetime.datetime.now()
+        print('VX = ', msg.vx/100)
         print(now)
 
     #print(msg.get_type())
